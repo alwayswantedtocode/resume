@@ -3,6 +3,7 @@ import ProjectsSection from '@/Components/ProjectsSection'
 import SkillSection from '@/Components/SkillSection'
 import React from 'react'
 import AboutMe from "@/Components/AboutMe"
+import ContactForm from '@/Components/ContactMe'
 
 
 const page = () => {
@@ -14,7 +15,7 @@ const page = () => {
         <SkillSection />
         <ProjectsSection />
         <AboutMe />
-
+        <ContactForm />
       </main>
     </div>
   )
