@@ -15,7 +15,8 @@ const ProjectsSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 to-gray-50 py-16 px-4 sm:px-6 lg:px-8 overflow-hidden"
+            id='Projects'
+            className="relative min-h-screen flex items-center justify-center  py-5 px-4 sm:px-6 lg:px-8 overflow-hidden bg-gradient-to-br from-blue-50/30 to-purple-50/30"
         >
         
             <div className="max-w-7xl  px-4 sm:px-6 lg:px-8">
@@ -23,9 +24,10 @@ const ProjectsSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold text-gray-900 text-center mb-12"
+                    className="text-3xl font-bold text-gray-900 text-center mb-12 relative"
                 >
                     Featured Projects
+                    <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-gray-800 -translate-x-1/2 translate-y-2 rounded-full" />
                 </motion.h2>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -78,7 +80,7 @@ function ProjectItem({ project, index }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: index * 0.2 + idx * 0.05 }}
-                        className="px-3 py-1 bg-blue-50 text-blue-600 rounded-full text-sm"
+                        className="px-3 py-1 bg-purple-100 text-grey-600 rounded-full text-sm"
                     >
                         {tech}
                     </motion.span>

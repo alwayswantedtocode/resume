@@ -3,9 +3,9 @@ const projects = [
   {
     title: "Social Media CRUD Web App",
     links: [
-      { url: "#", label: "Client Repo", icon: <FiGithub /> },
-      { url: "#", label: "Server Repo", icon: <FiGithub /> },
-      { url: "#", label: "Live Demo", icon: <FiExternalLink /> },
+      { url: "https://github.com/alwayswantedtocode/share-x", label: "Client Repo", icon: <FiGithub /> },
+      { url: "https://github.com/alwayswantedtocode/Share-x-Server", label: "Server Repo", icon: <FiGithub /> },
+      { url: "https://share-x-q14a.onrender.com", label: "Live Demo", icon: <FiExternalLink /> },
     ],
     stack: ["React.js", "Redux Toolkit", "Firebase", "Tailwind CSS"],
     achievements: [
@@ -18,9 +18,9 @@ const projects = [
   {
     title: "Location Pinning CRUD Web App",
     links: [
-      { url: "#", label: "Client Repo", icon: <FiGithub /> },
-      { url: "#", label: "Server Repo", icon: <FiGithub /> },
-      { url: "#", label: "Live Demo", icon: <FiExternalLink /> },
+      { url: "https://github.com/alwayswantedtocode/Pinning-Location", label: "Client Repo", icon: <FiGithub /> },
+      { url: "https://github.com/alwayswantedtocode/Pinning-Location", label: "Server Repo", icon: <FiGithub /> },
+      { url: "https://lara-pastry-ui.onrender.com", label: "Live Demo", icon: <FiExternalLink /> },
     ],
     stack: ["React", "MongoDB", "Google Maps API"],
     achievements: [
@@ -32,9 +32,9 @@ const projects = [
   {
     title: "Automobile Dynamic Web App",
     links: [
-      { url: "#", label: "Client Repo", icon: <FiGithub /> },
-      { url: "#", label: "Server Repo", icon: <FiGithub /> },
-      { url: "#", label: "Live Demo", icon: <FiExternalLink /> },
+      { url: "https://github.com/alwayswantedtocode/ShowRoom-Project", label: "Client Repo", icon: <FiGithub /> },
+
+      { url: "https://showroom-6nwa.onrender.com/", label: "Live Demo", icon: <FiExternalLink /> },
     ],
     stack: ["React", "Firebase"],
     achievements: [
@@ -44,4 +44,4 @@ const projects = [
     ],
   },
 ];
- export default projects;
+export default projects;

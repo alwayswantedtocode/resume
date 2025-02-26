@@ -12,21 +12,23 @@ const SkillSection = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="flex items-center justify-center py-16 bg-white px-4 sm:px-6 lg:px-8 overflow-hidden border-2 border-red-500"
+            id='Tech-Stack'
+            className="flex items-center justify-center  py-5 px-4 sm:px-6 lg:px-8 overflow-hidden "
         >
-            <div className="max-w-7xl flex mx-auto flex-col items-center justify-center px-6 border-2 border-green-500">
+            <div className="max-w-7xl flex mx-auto flex-col items-center justify-center px-6 ">
                 {/* Section Title */}
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold text-gray-900 text-center mb-12"
+                    className="text-3xl font-bold text-gray-900 text-center mb-12 relative"
                 >
-                    Technical Skills
+                    Tech Stack
+                    <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-gray-800 -translate-x-1/2 translate-y-2 rounded-full" />
                 </motion.h2>
 
                 {/* Skills Grid */}
-                <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 border-2 border-blue-500">
+                <div className="max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
                     <SkillCategory
                         title="Frontend"
                         skills={[
@@ -74,7 +76,7 @@ function SkillCategory({ title, skills, delay }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: delay + index * 0.05 }}
-                        className="px-4 py-2  bg-blue-50 text-blue-600 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow duration-300"
+                        className="px-4 py-2  bg-purple-100 text-grey-600 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow duration-300"
                     >
                         {skill}
                     </motion.span>
