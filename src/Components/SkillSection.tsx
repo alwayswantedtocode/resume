@@ -3,6 +3,8 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 
+
+// type skillType = Skills[];
 const SkillSection = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
@@ -21,10 +23,10 @@ const SkillSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold text-gray-900 text-center mb-12 relative"
+                    className="text-3xl font-bold text-slate-100 text-center mb-12 relative"
                 >
                     Tech Stack
-                    <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-gray-800 -translate-x-1/2 translate-y-2 rounded-full" />
+                    <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-slate-100 -translate-x-1/2 translate-y-2 rounded-full" />
                 </motion.h2>
 
                 {/* Skills Grid */}
@@ -57,7 +59,13 @@ const SkillSection = () => {
     )
 }
 
-function SkillCategory({ title, skills, delay }) {
+type Skills = {
+    title: string;
+    skills: string[];
+    delay: number;
+}
+
+function SkillCategory({ title, skills, delay }: Skills) {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
     return (
@@ -76,7 +84,7 @@ function SkillCategory({ title, skills, delay }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: delay + index * 0.05 }}
-                        className="px-4 py-2  bg-purple-100 text-grey-600 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow duration-300"
+                        className="px-4 py-2  bg-[#f2d2c5] text-grey-600 rounded-full text-sm shadow-sm hover:shadow-md transition-shadow duration-300"
                     >
                         {skill}
                     </motion.span>

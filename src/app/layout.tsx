@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavHeader from "../Components/NavHeader"
+import Footer from "@/Components/Footer";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,7 +16,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Osatohamhen's Portfolio",
+  title: "Osecodes",
   description: "A Portfolio Webapp",
   icons: {
     icon: "/favicon(1).ico",
@@ -32,12 +34,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-gradient-to-br from-[#0f0c29] via-[#1e3c72] to-[#24243e] border-2 border-green-700 ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavHeader />
         {children}
+        <Footer />
       </body>
     </html>
   );

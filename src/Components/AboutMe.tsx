@@ -23,7 +23,7 @@ const AboutMe = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ delay: 0.2 }}
-                className="text-3xl md:text-4xl font-bold text-gray-900 text-center mb-8 md:mb-16 relative"
+                className="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-8 md:mb-16 relative"
             >
                 About Me
                 <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-gray-800 -translate-x-1/2 translate-y-2 rounded-full" />
@@ -35,7 +35,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.5, duration: 0.5 }}
-                    className="w-full max-w-[300px] md:max-w-[400px] aspect-square relative rounded-2xl overflow-hidden shadow-xl md:shadow-2xl hover:shadow-2xl transition-shadow duration-300 order-1 md:hidden "
+                    className="w-full max-w-[300px] md:max-w-[400px] aspect-square relative rounded-2xl overflow-hidden shadow-xl md:shadow-2xl hover:shadow-2xl transition-shadow duration-300 order-1  md:hidden"
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 mix-blend-overlay" />
                     <Image
@@ -60,9 +60,9 @@ const AboutMe = () => {
                             An enthusiastic self-taught junior frontend developer with a strong foundation in
                             <span className="text-blue-600 font-medium"> TypeScript</span>,
                             <span className="text-blue-600 font-medium"> JavaScript</span>, and modern frameworks like
-                            <span className="text-purple-600 font-medium"> React.js</span>,
-                            <span className="text-purple-600 font-medium"> Next.js</span>, and
-                            <span className="text-purple-600 font-medium"> Redux Toolkit</span>.
+                            <span className="text-blue-600 first-letter:font-medium"> React.js</span>,
+                            <span className="text-blue-600 font-medium"> Next.js</span>, and
+                            <span className="text-blue-600 font-medium"> Redux Toolkit</span>.
                         </p>
                         <p className="text-base md:text-lg">
                             I specialize in building scalable, user-centric web applications through hands-on
@@ -93,15 +93,15 @@ const AboutMe = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={inView ? { opacity: 1, y: 0 } : {}}
                             transition={{ delay: 0.7 }}
-                            className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-purple-500"
+                            className="group bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#c07a5c]"
                         >
                             <div className="flex flex-col items-center text-center space-y-4">
-                                <div className="mb-4 p-3 bg-purple-100 rounded-full">
-                                    <MdSchool className="text-3xl text-purple-600" />
+                                <div className="mb-4 p-3 bg-[#f2d2c5] rounded-full">
+                                    <MdSchool className="text-3xl text-[#c07a5c]" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-900">Education</h3>
                                 <p className="text-gray-600">B.ENG Degree</p>
-                                <p className="text-lg font-semibold text-purple-600">Electrical & Electronics</p>
+                                <p className="text-lg font-semibold text-[#c07a5c]">Electrical & Electronics</p>
                             </div>
                         </motion.div>
                     </div>
@@ -112,7 +112,7 @@ const AboutMe = () => {
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={inView ? { opacity: 1, scale: 1 } : {}}
                     transition={{ delay: 0.5, duration: 0.5 }}
-                    className="w-full max-w-[300px] md:max-w-[400px] aspect-square relative rounded-2xl overflow-hidden shadow-xl md:shadow-2xl hover:shadow-2xl transition-shadow duration-300 hidden md:flex"
+                    className="w-full max-w-[300px] lg:max-w-[400px] aspect-square relative rounded-2xl overflow-hidden shadow-xl lg:shadow-2xl hover:shadow-2xl transition-shadow duration-300 hidden lg:flex"
                 >
                     <div className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-purple-500/20 mix-blend-overlay" />
                     <Image

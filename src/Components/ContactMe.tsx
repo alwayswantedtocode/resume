@@ -5,6 +5,16 @@ import { useInView } from 'react-intersection-observer'
 import { FiSend } from 'react-icons/fi'
 import { useFormik } from 'formik'
 import * as Yup from "yup"
+import axios from "axios"
+
+
+interface EmailValues {
+    name: string
+    email: string
+    subject: string
+    message: string
+}
+
 
 const ContactForm = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -29,7 +39,7 @@ const ContactForm = () => {
     })
 
     // Formik Initialization
-    const formik = useFormik({
+    const formik = useFormik<EmailValues>({
         initialValues: {
             name: "",
             email: "",
@@ -40,15 +50,24 @@ const ContactForm = () => {
         onSubmit: async (values, { setSubmitting, resetForm, setStatus }) => {
             try {
                 setSubmitting(true)
-                // Replace with actual API call
-                // await axios.post('/api/contact', values)
 
-                // Success handling
+                await axios.post('/api/send-email', values, {
+                    headers: { 'Content-Type': 'application/json' }
+                })
+
                 resetForm()
                 setStatus({ success: true })
-                setTimeout(() => setStatus(null), 5000) // Hide success message after 5s
+                setTimeout(() => setStatus(null), 5000)
             } catch (error) {
-                setStatus({ error: error.message || 'Submission failed' })
+                let errorMessage = 'Submission failed. Please try again later.'
+
+                if (axios.isAxiosError(error)) {
+                    errorMessage = error.response?.data?.error || error.message
+                } else if (error instanceof Error) {
+                    errorMessage = error.message
+                }
+
+                setStatus({ error: errorMessage })
             } finally {
                 setSubmitting(false)
             }
@@ -62,13 +81,14 @@ const ContactForm = () => {
             animate={inView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
             className="py-5 "
+            id='contact'
         >
             <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
                 <motion.h2
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold text-gray-900 text-center mb-12"
+                    className="text-3xl font-bold text-slate-100 text-center mb-12"
                 >
                     Get in Touch
                 </motion.h2>
@@ -92,10 +112,10 @@ const ContactForm = () => {
                             value={formik.values.name}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className={`w-full px-4 py-3 bg-white border ${formik.touched.name && formik.errors.name
+                            className={`w-full px-4 py-3 bg-white border-2 ${formik.touched.name && formik.errors.name
                                 ? "border-red-500"
                                 : "border-gray-300"
-                                } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all`}
+                                } rounded-lg   focus:ring-[#c07a5c] focus:border-[#c07a5c]  transition-all`}
                         />
                         {formik.touched.name && formik.errors.name && (
                             <p className="text-red-500 text-sm mt-1">{formik.errors.name}</p>
@@ -122,7 +142,7 @@ const ContactForm = () => {
                             className={`w-full px-4 py-3 bg-white border ${formik.touched.email && formik.errors.email
                                 ? "border-red-500"
                                 : "border-gray-300"
-                                } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all`}
+                                } rounded-lg border-2 focus:ring-[#c07a5c] focus:border-[#c07a5c] transition-all`}
                         />
                         {formik.touched.email && formik.errors.email && (
                             <p className="text-red-500 text-sm mt-1">{formik.errors.email}</p>
@@ -146,7 +166,7 @@ const ContactForm = () => {
                             value={formik.values.subject}
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
-                            className={`w-full px-4 py-3 bg-white border  rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all`}
+                            className={`w-full px-4 py-3 bg-white border-2  rounded-lg  focus:ring-[#c07a5c] focus:border-[#c07a5c] transition-all`}
                         />
 
                     </motion.div>
@@ -170,7 +190,7 @@ const ContactForm = () => {
                             className={`w-full px-4 py-3 bg-white border ${formik.touched.message && formik.errors.message
                                 ? "border-red-500"
                                 : "border-gray-300"
-                                } rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all h-40`}
+                                } rounded-lg focus:ring-2 focus:ring-[#c07a5c] focus:border-[#c07a5c] transition-all h-40`}
                         />
                         {formik.touched.message && formik.errors.message && (
                             <p className="text-red-500 text-sm mt-1">{formik.errors.message}</p>
@@ -187,7 +207,7 @@ const ContactForm = () => {
                         <button
                             type="submit"
                             disabled={formik.isSubmitting || !formik.isValid}
-                            className="flex items-center justify-center gap-2 px-8 py-4 bg-gray-800  text-white rounded-lg shadow-lg hover:bg-gray-600 hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
+                            className="flex items-center justify-center gap-2 px-8 py-4 bg-[#c07a5c]  text-white rounded-lg shadow-lg hover:bg-[#f2d2c5] hover:shadow-xl transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
                             <FiSend className="w-5 h-5" />
                             {formik.isSubmitting ? "Sending..." : "Send Message"}

@@ -4,6 +4,14 @@ import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import projects from "./ProjectsData"
 
+type Project = {
+    title: string;
+    links: { url: string; label: string; icon: JSX.Element }[];
+    stack: string[];
+    achievements: string[];
+};
+
+
 const ProjectsSection = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
@@ -24,7 +32,7 @@ const ProjectsSection = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.2 }}
-                    className="text-3xl font-bold text-gray-900 text-center mb-12 relative"
+                    className="text-3xl font-bold text-gray-800 text-center mb-12 relative"
                 >
                     Featured Projects
                     <span className="absolute bottom-0 left-1/2 w-16 md:w-24 h-1 bg-gray-800 -translate-x-1/2 translate-y-2 rounded-full" />
@@ -43,8 +51,11 @@ const ProjectsSection = () => {
         </motion.section>
     )
 }
-
-function ProjectItem({ project, index }) {
+interface ProjectItemsProps{
+    project: Project;
+    index?: number | undefined;
+}
+function ProjectItem({ project, index }: ProjectItemsProps) {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
 
     return (
@@ -60,8 +71,9 @@ function ProjectItem({ project, index }) {
                 <div className="flex space-x-3">
                     {project.links.map((link, idx) => (
                         <a
-                            key={idx}
+                            key={`${link.label}-${idx}`}
                             href={link.url}
+                            title={link.label}
                             className="text-gray-600 hover:text-blue-600 transition-colors"
                             target="_blank"
                             rel="noopener noreferrer"
@@ -80,7 +92,7 @@ function ProjectItem({ project, index }) {
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
                         transition={{ delay: index * 0.2 + idx * 0.05 }}
-                        className="px-3 py-1 bg-purple-100 text-grey-600 rounded-full text-sm"
+                        className="px-3 py-1 bg-[#f2d2c5] text-grey-600 rounded-full text-sm"
                     >
                         {tech}
                     </motion.span>

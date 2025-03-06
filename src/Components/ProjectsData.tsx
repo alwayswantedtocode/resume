@@ -1,5 +1,17 @@
+import { ReactNode } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-const projects = [
+import { IconType } from "react-icons";
+
+
+type Project = {
+  title: string;
+  links: { url: string; label: string; icon: JSX.Element }[];
+  stack: string[];
+  achievements: string[];
+};
+type projectTypes = Project[];
+
+ const projects: projectTypes = [
   {
     title: "Social Media CRUD Web App",
     links: [

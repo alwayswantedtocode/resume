@@ -1,5 +1,5 @@
 "use client"
-import { useRef } from "react"
+import { useRef,useState } from "react"
 
 const useMenuNavigate = () => {
     const homeRef = useRef(null)
@@ -7,15 +7,30 @@ const useMenuNavigate = () => {
     const projectRef = useRef(null)
     const aboutRef = useRef(null)
 
+    const [isMenuopened, setIsMenuopened] = useState(false)
+    
+    const toggleMenu=() => {
+        setIsMenuopened(!isMenuopened)
+    }
+    const closeMenu=() => {
+        setIsMenuopened(false)
+    }
+
     const scrollToSection = (ref) => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
     }
+
+
     return {
         homeRef,
         stackRef,
         projectRef,
         aboutRef,
-        scrollToSection
+        scrollToSection,
+        isMenuopened,
+        setIsMenuopened,
+        toggleMenu,
+        closeMenu
     }
 }
 
