@@ -1,10 +1,11 @@
+import { ReactNode } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
 
 
 
 type Project = {
   title: string;
-  links: { url: string; label: string; icon: JSX.Element }[];
+  links: { url: string; label: string; icon: ReactNode }[];
   stack: string[];
   achievements: string[];
 };

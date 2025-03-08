@@ -24,10 +24,19 @@ const MenuDropDown = ({ open, close }: { open: boolean, close: () => void }) => 
             >
                 <div className="w-full flex  h-max py-4 pl-4">
                     <ul className="flex flex-col px-[1rem] gap-[30px] w-full" >
-                        <Link href="#Home"><li className="" onClick={() => close()}>Home</li></Link>
-                        <Link href="#Tech-Stack" onClick={() => close()}><li className="">Tech Stack</li></Link>
-                        <Link href="#Projects" onClick={close}><li className="" onClick={() => close()}>Projects</li></Link>
-                        <Link href="#About-me" onClick={() => close()}><li className="" onClick={() => close()}>About me</li></Link>
+                        <Link href="#Home">
+                            <li className="hover:text-[#c07a5c]" onClick={() => close()}>Home</li>
+                        </Link>
+                        <Link href="#About-me" onClick={() => close()}>
+                            <li className="hover:text-[#c07a5c]" onClick={() => close()}>About me</li>
+                        </Link>
+                        <Link href="#Tech-Stack" onClick={() => close()}>
+                            <li className="hover:text-[#c07a5c]">Tech Stack</li>
+                        </Link>
+                        <Link href="#Projects" onClick={close}>
+                            <li className="hover:text-[#c07a5c]" onClick={() => close()}>Projects</li>
+                        </Link>
+
                     </ul>
                 </div>
 
@@ -35,14 +44,14 @@ const MenuDropDown = ({ open, close }: { open: boolean, close: () => void }) => 
                 <div className="border-t border-gray-700 p-4 flex justify-center">
                     <div className="flex flex-col gap-3 text-sm text-gray-400">
                         <div className="flex gap-4">
-                            <Link href="mailto:j.s.oebhohon@gmail.com" className="hover:text-white transition-colors">
+                            <Link href="mailto:j.s.oebhohon@gmail.com" className="hover:text-[#c07a5c] transition-colors ">
                                 Contact
                             </Link>
                             <a
                                 href="https://linkedin.com/in/yourprofile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-white transition-colors"
+                                className=" transition-colors hover:text-[#c07a5c]"
                             >
                                 LinkedIn
                             </a>
@@ -50,7 +59,7 @@ const MenuDropDown = ({ open, close }: { open: boolean, close: () => void }) => 
                                 href="https://github.com/yourprofile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-white transition-colors"
+                                className=" transition-colors hover:text-[#c07a5c]"
                             >
                                 GitHub
                             </a>
