@@ -25,7 +25,7 @@ const Footer = () => {
                 { name: "Projects", href: "#Projects" },
                 { name: "Tech Stack", href: "#Tech-Stack" },
                 { name: "About me", href: "#About-me" },
-                { name: "Contact", href: "mailto:j.s.oebhohon@gmail.com" },
+                { name: "Contact", href: "#contact" },
             ],
         },
         {
