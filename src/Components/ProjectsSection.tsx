@@ -64,7 +64,7 @@ function ProjectItem({ project, index }: ProjectItemsProps) {
             ref={ref}
             initial={{ opacity: 0, y: 20 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ delay: index * 0.2 }}
+            transition={{ duration: 0.6 }}
             className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300"
         >
             <div className="flex justify-between items-start mb-4">
@@ -80,6 +80,7 @@ function ProjectItem({ project, index }: ProjectItemsProps) {
                             rel="noopener noreferrer"
                         >
                             <span className="sr-only">{link.label}</span>
+                            
                             {React.cloneElement(link.icon, { className: 'w-5 h-5' })}
                         </a>
                     ))}
