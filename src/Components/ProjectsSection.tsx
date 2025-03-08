@@ -3,10 +3,11 @@ import React from 'react'
 import { motion } from 'framer-motion'
 import { useInView } from 'react-intersection-observer'
 import projects from "./ProjectsData"
+import { ReactNode } from "react";
 
 type Project = {
     title: string;
-    links: { url: string; label: string; icon: JSX.Element }[];
+    links: { url: string; label: string; icon: ReactNode }[];
     stack: string[];
     achievements: string[];
 };
