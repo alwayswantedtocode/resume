@@ -54,7 +54,7 @@ const ProjectsSection = () => {
 }
 interface ProjectItemsProps{
     project: Project;
-    index?: number | undefined;
+    index: number ;
 }
 function ProjectItem({ project, index }: ProjectItemsProps) {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 })
@@ -81,7 +81,7 @@ function ProjectItem({ project, index }: ProjectItemsProps) {
                         >
                             <span className="sr-only">{link.label}</span>
                             
-                            {React.cloneElement(link.icon, { className: 'w-5 h-5' })}
+                            {/* {React.cloneElement(link.icon, { className: 'w-5 h-5' })} */}
                         </a>
                     ))}
                 </div>
@@ -93,7 +93,7 @@ function ProjectItem({ project, index }: ProjectItemsProps) {
                         key={tech}
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={inView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ delay: index * 0.2 + idx * 0.05 }}
+                        transition={{ delay: 0.2 * (index || 0) + idx * 0.05 }}
                         className="px-3 py-1 bg-[#f2d2c5] text-grey-600 rounded-full text-sm"
                     >
                         {tech}
@@ -107,7 +107,7 @@ function ProjectItem({ project, index }: ProjectItemsProps) {
                         key={idx}
                         initial={{ opacity: 0, x: -20 }}
                         animate={inView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ delay: index * 0.2 + idx * 0.1 }}
+                        transition={{ delay: 0.2 * (index || 0) + idx * 0.1 }}
                         className="flex items-start text-gray-600"
                     >
                         <span className="text-blue-500 mr-2">▹</span>
