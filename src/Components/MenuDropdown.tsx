@@ -1,11 +1,10 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from 'framer-motion'
-import { useInView } from 'react-intersection-observer'
-import useMenuNavigate from "@/hooks/useMenuNavigate";
 
 
-const MenuDropDown = ({ open, close }: { open: boolean, close:any }) => {
+
+const MenuDropDown = ({ open, close }: { open: boolean, close: () => void }) => {
 
 
 
@@ -15,7 +14,7 @@ const MenuDropDown = ({ open, close }: { open: boolean, close:any }) => {
             animate={{ opacity: open ? 1 : 0, y: open ? 0 : 20 }}
             transition={{ duration: 0.6 }}
             className={`fixed top-[5rem] right-0 w-full h-full z-30 grid place-items-center bg-black bg-opacity-30 lg:hidden ${open ? "pointer-events-auto" : "pointer-events-none"
-                }`} 
+                }`}
         >
             <motion.div
                 initial={{ x: '-100%' }}
@@ -26,7 +25,7 @@ const MenuDropDown = ({ open, close }: { open: boolean, close:any }) => {
                 <div className="w-full flex  h-max py-4 pl-4">
                     <ul className="flex flex-col px-[1rem] gap-[30px] w-full" >
                         <Link href="#Home"><li className="" onClick={() => close()}>Home</li></Link>
-                        <Link href="#Tech-Stack" onClick={()=>close()}><li className="">Tech Stack</li></Link>
+                        <Link href="#Tech-Stack" onClick={() => close()}><li className="">Tech Stack</li></Link>
                         <Link href="#Projects" onClick={close}><li className="" onClick={() => close()}>Projects</li></Link>
                         <Link href="#About-me" onClick={() => close()}><li className="" onClick={() => close()}>About me</li></Link>
                     </ul>

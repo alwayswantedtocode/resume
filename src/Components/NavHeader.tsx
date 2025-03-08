@@ -7,7 +7,6 @@ import MenuDropDown from "./MenuDropdown";
 const Navbar = () => {
   const {
     isMenuopened,
-    setIsMenuopened,
     toggleMenu,
     closeMenu
   } = useMenuNavigate()

@@ -1,6 +1,5 @@
-import { ReactNode } from "react";
 import { FiGithub, FiExternalLink } from "react-icons/fi";
-import { IconType } from "react-icons";
+
 
 
 type Project = {

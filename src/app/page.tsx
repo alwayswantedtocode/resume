@@ -4,7 +4,6 @@ import SkillSection from '@/Components/SkillSection'
 import React from 'react'
 import AboutMe from "@/Components/AboutMe"
 import ContactForm from '@/Components/ContactMe'
-import Footer from '@/Components/Footer'
 
 
 const page = () => {
