@@ -1,5 +1,5 @@
 "use client"
-import { useRef,useState } from "react"
+import { RefObject, useRef,useState } from "react"
 
 const useMenuNavigate = () => {
     const homeRef = useRef(null)
@@ -16,7 +16,7 @@ const useMenuNavigate = () => {
         setIsMenuopened(false)
     }
 
-    const scrollToSection = (ref) => {
+    const scrollToSection = (ref: RefObject<HTMLElement>) => {
         ref.current?.scrollIntoView({ behavior: "smooth" })
     }
 
