@@ -25,7 +25,7 @@ const Footer = () => {
                 { name: "Projects", href: "#Projects" },
                 { name: "Tech Stack", href: "#Tech-Stack" },
                 { name: "About me", href: "#About-me" },
-                { name: "Contact", href: "#contact" },
+                { name: "Contact", href: "mailto:j.s.oebhohon@gmail.com" },
             ],
         },
         {
@@ -51,10 +51,11 @@ const Footer = () => {
 
         {
             name: "Email",
-            href: "#contact",
+            href: "mailto:j.s.oebhohon@gmail.com" ,
             icon: <FaEnvelope className="w-6 h-6" />,
         },
     ]
+
 
     return (
         <footer className="bg-gray-900 text-gray-300 py-12 mt-20 ">
@@ -108,8 +109,8 @@ const Footer = () => {
                         <h3 className="text-lg font-semibold text-white">Contact</h3>
                         <div className="space-y-2 text-sm">
                             <p>Lagos, Nigeria</p>
-                            <p>Email: j.s.oebhohon@gmail.com</p>
-                            <p>Phone: <a href="tel:+2349136117011">+234 913 611 7011</a></p>
+                            <p>j.s.oebhohon@gmail.com</p>
+                            <p className="hover:text-[#c07a5c] "> <a href="tel:+2349136117011">+234 913 611 7011</a></p>
                         </div>
                     </div>
                 </div>

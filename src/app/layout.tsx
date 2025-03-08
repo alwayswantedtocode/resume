@@ -35,7 +35,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`bg-gradient-to-br from-[#0f0c29] via-[#1e3c72] to-[#24243e] border-2 border-green-700 ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`bg-gradient-to-br from-[#0f0c29] via-[#1e3c72] to-[#24243e] ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         <NavHeader />
         {children}
